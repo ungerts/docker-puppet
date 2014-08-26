@@ -1,4 +1,4 @@
 # site.pp
-node 'nginx' {
+node 'nginx', 'nginx.test.gridsolut.de' {
     include nginx
 }

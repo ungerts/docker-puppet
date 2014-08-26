@@ -16,3 +16,11 @@ RUN apt-get update
 RUN apt-get install -y puppetmaster augeas-tools vim
 
 RUN gem install puppet-lint --no-ri --no-rdoc
+
+ADD ./puppet/puppetconf /etc/puppet
+
+ADD ./puppet/environments /etc/puppet/environments
+
+ADD ./puppet/modules /etc/puppet/modules
+
+ENTRYPOINT ["puppet", "master", "--no-daemonize", "--logdest", "console", "--verbose"]
