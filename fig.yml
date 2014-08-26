@@ -1,4 +1,18 @@
+dnsmasq:
+  build: ./dnsmasq
+  hostname: dnsmasq
+  domainname: test.gridsolut.de
 puppet:
   build: ./puppetmaster
-  command: bash
+  hostname: puppet
+  domainname: test.gridsolut.de
+  links: 
+    - dnsmasq:dnsmasq
+nginx:
+  build: ./nginx
+  hostname: nginx
+  domainname: test.gridsolut.de
+  links:
+    - puppet:puppet
+    - dnsmasq:dnsmasq
 
