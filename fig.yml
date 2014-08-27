@@ -15,4 +15,5 @@ nginx:
   links:
     - puppet:puppet
     - dnsmasq:dnsmasq
-
+  ports:
+    - "80:80"

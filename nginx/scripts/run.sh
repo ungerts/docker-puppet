@@ -2,4 +2,4 @@
 sleep 15
 env
 cat /etc/hosts
-puppet agent --no-daemonize --server puppet --logdest console --verbose
+supervisord -n -c /etc/supervisor/supervisord.conf

@@ -37,4 +37,6 @@ RUN chmod 755 /scripts/*
 
 ADD ./supervisor /etc/supervisor
 
+ENTRYPOINT ["/scripts/run.sh"]
+
 #ENTRYPOINT ["puppet", "master", "--no-daemonize", "--logdest", "console", "--verbose"]
