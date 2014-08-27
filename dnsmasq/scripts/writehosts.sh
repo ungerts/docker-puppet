@@ -5,7 +5,7 @@ require "json"
 members=JSON.parse(ARGF.read)
 members["members"].each do |member|
   ip = member["addr"].split(':').first
-  host = member["host"]
-  puts "#{ip} #{host}"
+  name = member["name"]
+  puts "#{ip} #{name}"
 end
 

@@ -21,4 +21,12 @@ RUN chmod 755 /scripts/*
 
 ADD ./supervisor /etc/supervisor
 
+RUN apt-get install -y dnsmasq dnsutils ruby
+
+ADD ./dnsmasq/dnsmasq.d /etc/dnsmasq.d
+
+ADD ./data/hosts /data/hosts
+
 #ENTRYPOINT ["serf", "agent", "-tag", "role=web"]
+
+ENTRYPOINT ["/scripts/run.sh"]
