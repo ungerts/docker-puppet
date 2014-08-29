@@ -9,7 +9,7 @@ puppet:
   links: 
     - dnsmasq:dnsmasq
 nginx:
-  build: ./nginx
+  build: ./agent
   hostname: nginx
   domainname: test.gridsolut.de
   links:
